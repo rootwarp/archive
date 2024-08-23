@@ -1,7 +1,16 @@
----
-title: How to verify Ethereum attestation data
-author: Joonkyo Kim (@rootwarp)
----
++++ 
+draft = false
+date = 2024-03-05T23:46:11+09:00
+title = "How to verify Ethereum attestation data"
+description = "description"
+slug = ""
+authors = ["rootwarp"]
+tags = ["crypto", "ethereum"]
+categories = ["cryto", "ethereum"]
+externalLink = ""
+series = []
++++
+
 
 ## Intro
 
@@ -31,7 +40,7 @@ The below test function `TestBLS_SimpleAggregation` demonstrates how aggregated
 As testing code shows, the aggregated signature can be verified with all related public keys and messages by one step.
 
 
-```
+```golang
 func TestBLS_SimpleAggregation(t *testing.T) {
 ...
 ...
@@ -67,7 +76,7 @@ For verification, slot `8165556` was chosen. Due to attestation data of `81655
 
 The selected attestation data can be found on [beaconcha.in](https://beaconcha.in/slot/8165557#attestations). From the next section, the signature `0x937252738739be42843f5c2d587e78cac606d28bed848cab7c906904bbae6835d0e72704af32650c608d9c27bd394d09035b2ee51783402cfa689cf281256f179e2a546c04ffb7c3af5da002a7861f81c134d760b4e8ec366d4a4c83bc710757` will be verified.
 
-![Fig.1. Attestation Data](./img/2024-0001-selected_attestation.png)
+![Fig.1. Attestation Data](/img/2024-0001-selected_attestation.png)
 
 ### Prepare Attestation Data
 
@@ -134,7 +143,7 @@ For the last step, `signing data` should be created. To create `signing data`, `
 
 The data creating process described above attached below[^10].
 
-```go
+```golang
     genesisValidatorRoot, err := hex.DecodeString("4b363db94e286120d76eb905340fdd4e54bfe9f06bf33ff6cf5ad27f511bfe95")
 
 
@@ -174,7 +183,7 @@ If a signing data prepared, public key of validators should be collected to veri
 Due to this, which validators on the committee should be revealed correctly and it can be done by reading aggregation bit which is contained on slot data like below.
 
 
-![Fig. 2. Aggregation Bits](./img/2024-0001-aggregation_bit.png)
+![Fig. 2. Aggregation Bits](/img/2024-0001-aggregation_bit.png)
 
 Each bit on the `aggregation bits` shows which validator index on the committee has been participated attestation correctly. For example, 14th validator participated attestation and the 14th validator on the 18th committee is a validator `327352`(Found at `fixtures/beacon_states_8165556_committees.json`, line `577144`).
 

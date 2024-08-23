@@ -1,0 +1,67 @@
+baseurl = "https://archive.rootwarp.xyz"
+title = "archive @rootwarp"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+
+[services]
+[services.disqus]
+disqusShortname = "rootwarp"
+
+[markup.highlight]
+style = "github-dark"
+
+[params]
+  author = "rootwarp"
+  info = "Software Engineer, Gopher, Backend, Kubernetes and Validator"
+  description = "John Doe's personal website"
+  keywords = "developer,blockchain"
+  #avatarurl = "images/avatar.jpg"
+
+  faviconSVG = "/img/favicon.svg"
+  favicon_32 = "/img/favicon-32x32.png"
+  favicon_16 = "/img/favicon-16x16.png"
+
+  since = 2024
+
+  enableTwemoji = true
+
+  colorScheme = "dark"
+  hidecolorschemetoggle = true
+
+  math = true
+
+  # customCSS = ["css/custom.css"]
+  # customSCSS = ["scss/custom.scss"]
+  # customJS = ["js/custom.js"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
+# Social links
+[[params.social]]
+  name = "Github"
+  icon = "fa-brands fa-github fa-2x"
+  weight = 1
+  url = "https://github.com/rootwarp/"
+[[params.social]]
+  name = "X"
+  icon = "fa-brands fa-x-twitter fa-2x"
+  weight = 3
+  url = "https://x.com/rootwarp/"
+
+# Menu links
+[[menu.main]]
+  name = "Posts"
+  weight = 1
+  url  = "posts/"
+
+#[[menu.main]]
+#  name = "About"
+#  weight = 2
+#  url = "about/"
