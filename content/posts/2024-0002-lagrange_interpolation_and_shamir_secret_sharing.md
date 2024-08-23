@@ -6,7 +6,7 @@ description = "description"
 slug = ""
 authors = ["rootwarp"]
 tags = ["crypto"]
-categories = ["cryto"]
+categories = ["crypto"]
 externalLink = ""
 series = []
 +++
