@@ -13,6 +13,8 @@ series = []
 
 A validator can propose an Ethereum block without choosing every transaction inside it. Specialist builders do that work, and MEV-Boost connects the two sides through relays. EIP-7732 would bring the exchange they rely on into Ethereum’s consensus rules. That sounds like a small change in plumbing, but it changes who participants have to trust and how validators spend each slot.
 
+> This post is a shorter version of a longer survey. The [full survey (PDF, 11 pages)](/pdf/2026-0001-epbs_survey.pdf) goes deeper into the payment paths, fork choice, and security properties.
+
 ## 1. Why separate proposers and builders?
 
 Proposer-builder separation, or PBS, splits block production into two jobs. The builder chooses and orders transactions, creating what Ethereum calls an execution payload. The proposer is the validator selected to propose the beacon block for that slot. It can use a builder’s payload instead of assembling one itself.
@@ -85,7 +87,7 @@ There is an engineering cost as well. Ethereum’s consensus layer has to handle
 
 For a validator operator, EIP-7732 changes two practical things: how a builder’s promise becomes an enforceable payment, and when the node needs to do each part of its work. Understanding those changes is a useful starting point for judging both the benefits of ePBS and the complexity it adds.
 
-Source note: Adapted from “Enshrined Proposer-Builder Separation (EIP-7732): A Survey of Protocol Design, Security Properties, and Market Structure.” The timing figure distinguishes payload receipt before 6 seconds from PTC reporting by 9 seconds, as in the Gloas validator draft checked on 18 October 2026.[^5] Payment details follow the security analysis at the revision listed in the references.[^6] Specification details remain subject to change.
+Source note: Adapted from [“Enshrined Proposer-Builder Separation (EIP-7732): A Survey of Protocol Design, Security Properties, and Market Structure”](/pdf/2026-0001-epbs_survey.pdf) (PDF). The timing figure distinguishes payload receipt before 6 seconds from PTC reporting by 9 seconds, as in the Gloas validator draft checked on 18 October 2026.[^5] Payment details follow the security analysis at the revision listed in the references.[^6] Specification details remain subject to change.
 
 [^1]: ethereum.org contributors, “[Proposer-builder separation](https://ethereum.org/roadmap/pbs/),” ethereum.org Roadmap, accessed Oct. 18, 2026. [Online].
 [^2]: Flashbots, “[MEV-Boost](https://docs.flashbots.net/flashbots-mev-boost/introduction),” Flashbots Docs, accessed Oct. 18, 2026. [Online].
